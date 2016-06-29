@@ -4,13 +4,298 @@
     {
       "type": "NativeScript:view",
       "name": "homeView",
-      "components": [],
-      "title": "Home View",
+      "components": [
+        {
+          "type": "NativeScript:authentication",
+          "name": "homeViewModel",
+          "dataProvider": "kikeBs",
+          "emailLabel": "Email",
+          "passwordLabel": "Password",
+          "signinLabel": "Iniciar Sesión",
+          "signinRedirect": "platos",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Registrarme",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "Name",
+          "registerLabel": "Registrarse",
+          "registerRedirect": "platos",
+          "gotoSigninLabel": "Regresar",
+          "enableLogout": true,
+          "logoutLabel": "Sign Out",
+          "enableRememberme": true,
+          "remembermeLabel": "Recordar"
+        }
+      ],
+      "title": "Login",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "platos",
+      "components": [
+        {
+          "type": "NativeScript:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [],
+          "name": "platosModel",
+          "dataProvider": "kikeBs",
+          "collection": "Platos",
+          "headerField": "Nombre",
+          "subHeaderField": "Precio",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": false,
+          "editItemForm": false
+        }
+      ],
+      "title": "Platos",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "direccion",
+      "components": [
+        {
+          "type": "NativeScript:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "nombre",
+                  "title": "Nombre",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Nombre"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "numero",
+                  "title": "Numero",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Numero"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "referencia",
+                  "title": "Referencia",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Referencia"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "latitud",
+                  "title": "Latitud",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Latitud"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "longitud",
+                  "title": "Longitud",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Longitud"
+                }
+              ],
+              "name": "editableListForm21",
+              "formType": "add"
+            },
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "referencia",
+                  "title": "Referencia",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "Referencia"
+                }
+              ],
+              "name": "editableListForm16",
+              "formType": "list"
+            }
+          ],
+          "name": "direccionModel",
+          "dataProvider": "kikeBs",
+          "collection": "Direccion",
+          "headerField": "Nombre",
+          "subHeaderField": "Numero",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": true,
+          "deleteItemConfirmation": true,
+          "detailHeaderFieldSource": "dataBound",
+          "detailHeaderField": "Nombre",
+          "detailSubHeaderField": "Latitud",
+          "detailDescriptionField": "Longitud",
+          "addItemForm": true,
+          "addScreenHeaderValue": "Agregar Dirección",
+          "editItemForm": false
+        }
+      ],
+      "title": "Mis Direcciones",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "orden",
+      "components": [
+        {
+          "type": "NativeScript:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "codigo",
+                  "title": "Codigo",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Codigo"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "costo",
+                  "title": "Costo",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Costo"
+                },
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "plato",
+                  "title": "Plato",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Platos"
+                }
+              ],
+              "name": "editableListForm29",
+              "formType": "add"
+            }
+          ],
+          "name": "ordenModel",
+          "dataProvider": "kikeBs",
+          "collection": "Orden",
+          "headerField": "Codigo",
+          "subHeaderField": "Platos",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": true,
+          "deleteItemConfirmation": true,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": true,
+          "addScreenHeaderValue": "Agregar Orden",
+          "editItemForm": false,
+          "itemActionView": "platos",
+          "itemActionPrimaryKey": "Id",
+          "itemActionSecondaryKey": "Nombre"
+        }
+      ],
+      "title": "Carrito de Compras",
+      "addToNavigation": true,
+      "icon": "camera"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "seguimiento",
+      "components": [
+        {
+          "type": "NativeScript:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "platos",
+                  "title": "Platos",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "Platos"
+                }
+              ],
+              "name": "editableListForm37",
+              "formType": "list"
+            },
+            {
+              "type": "NativeScript:editableListForm",
+              "components": [
+                {
+                  "type": "NativeScript:editableListFormField",
+                  "name": "platos",
+                  "title": "Platos",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "Platos"
+                }
+              ],
+              "name": "editableListForm38",
+              "formType": "detail"
+            }
+          ],
+          "name": "seguimientoModel",
+          "dataProvider": "kikeBs",
+          "collection": "Orden",
+          "headerField": "Codigo",
+          "subHeaderField": "Costo",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "dataBound",
+          "detailHeaderField": "Codigo",
+          "detailSubHeaderField": "Costo",
+          "detailDescriptionField": "Estado",
+          "addItemForm": false,
+          "editItemForm": false
+        }
+      ],
+      "title": "Seguimiento",
+      "addToNavigation": true,
+      "icon": "globe"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "NativeScript:dataProvider",
+      "name": "kikeBs",
+      "title": "KikeBS / KikeBS",
+      "source": "everlive",
+      "everliveKey": "uuly0o81wwk6g4uf",
+      "offlineStorage": false
+    }
+  ],
   "name": "nativeScriptApp",
   "navigation": "listmenu",
   "transition": "none",
